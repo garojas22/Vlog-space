@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🖥️​ Vlog Space</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <span class="fw-bold tracking-wide">Vlog Space</span>
+            </a>
 
-    <header>
-        <div class="logo-container">
-            <h1>Gabriel Alejandro Rojas González</h1>
-            <p class="tagline">Estudiante de Ciencias de la Computación | Desarrollador & Diseñador Visual</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#sobre-mi">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#vlog">Vlog de Aprendizaje</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    </nav>
     <main>
         
         <section id="sobre-mi">
             <h2>Sobre Mí</h2>
             <div class="bio-content">
                 <p>
-                    ¡Hola! Soy Gabriel. Actualmente curso la carrera de Ciencias de la Computación en la Universidad Bicentenaria de Aragua. Me apasiona la convergencia entre la lógica del desarrollo de software y la creatividad del diseño visual.
+                    ¡Hola! Soy Gabriel. 
+                    Actualmente curso el Tsu de Informatica
+                    en la Universidad Bicentenaria de Aragua. 
+                    Me apasiona la convergencia entre la lógica del desarrollo 
+                    de software y la creatividad del diseño visual.
                 </p>
                 <p>
                     Mi enfoque técnico se divide en dos mundos que se complementan: el backend (con lenguajes como C, Java, JavaScript y Python) y la creación de identidades visuales y edición de video digital (utilizando herramientas como Illustrator, Canva y CapCut). Además, me interesa profundamente la psicología aplicada y la comunicación no verbal.
@@ -51,65 +65,27 @@
             <div class="projects-grid">
                 
                 <article class="project-card">
-                    <h3>Propuesta de Seguridad Industrial - YOLOv5</h3>
-                    <p class="project-category">Visión Artificial / Python</p>
-                    <p>Diseño y metodología para la detección automatizada de Equipos de Protección Personal (EPP) en entornos de fábrica utilizando el modelo YOLOv5.</p>
+                    <h3>1</h3>
                 </article>
 
                 <article class="project-card">
-                    <h3>Rebranding - Café Aroma Local</h3>
-                    <p class="project-category">Identidad Visual / Diseño Vectorial</p>
-                    <p>Desarrollo de identidad visual completa, paleta de colores y manual de marca vectorizado manualmente en Adobe Illustrator para modernizar la imagen del negocio.</p>
+                    <h3>2</h3>
                 </article>
 
                 <article class="project-card">
-                    <h3>LimpioVen Page</h3>
-                    <p class="project-category">Desarrollo Web</p>
-                    <p>Proyecto de página web maquetado y desarrollado utilizando entornos de desarrollo en la nube (GitHub Codespaces).</p>
+                    <h3>3</h3>
                 </article>
 
             </div>
         </section>
-
-        <hr>
-
-        <section id="vlog">
-            <h2>Vlog: Mi Proceso de Aprendizaje</h2>
-            <p class="section-intro">Aquí comparto mis avances en la universidad, mis cursos en Platzi, retos de código y procesos de diseño.</p>
-            
-            <div class="vlog-container">
-                
-                <article class="vlog-post">
-                    <h3>Mi proceso de diseño vectorial para posters académicos</h3>
-                    <p class="vlog-date">Publicado el: 20 de junio, 2026</p>
-                    <div class="video-responsive">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ejemplo" title="Video de diseño" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <p class="vlog-description">
-                        En este video muestro cómo estructuré un poster universitario utilizando herramientas vectoriales manuales en Illustrator, priorizando el cumplimiento académico y la limpieza visual.
-                    </p>
-                </article>
-
-                <article class="vlog-post">
-                    <h3>Ruta de Fundamentos de Desarrollo Web en Platzi</h3>
-                    <p class="vlog-date">Publicado recientemente</p>
-                    <p>
-                        Comparto mis apuntes y lógica detrás del código mientras avanzo en mi ruta de desarrollo web profesional. La clave ha sido dominar las bases antes de saltar a frameworks complejos.
-                    </p>
-                </article>
-
-            </div>
-        </section>
-
-        <hr>
 
         <section id="contacto">
             <h2>¡Conectemos!</h2>
             <p>Estoy abierto a proyectos colaborativos, pasantías o desafíos de desarrollo y diseño.</p>
             <ul class="contact-links">
-                <li>Email: <a href="gabrielrojas1903@gmail.com">tu-correo@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://linkedin.com/in/tu-perfil" target="_blank">Gabriel Alejandro Rojas González</a></li>
-                <li>GitHub: <a href="https://github.com/garojas22" target="_blank">github.com/tu-usuario</a></li>
+                <li>Email: <a href="mailto:gabrielrojas1903@gmail.com">gabrielrojas1903@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/gabriel-rojas-8bb4b523a/" target="_blank">Gabriel Alejandro Rojas González</a></li>
+                <li>GitHub: <a href="https://github.com/garojas22" target="_blank">github.com/garojas22</a></li>
             </ul>
         </section>
 
@@ -118,7 +94,5 @@
     <footer>
         <p>&copy; 2026 Gabriel Alejandro Rojas González. Hecho con código y diseño desde Venezuela.</p>
     </footer>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-</html>
