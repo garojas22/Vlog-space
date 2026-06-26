@@ -1,0 +1,175 @@
+/* =============================================
+    hero.css — Hero, code block, botones y socials
+   ============================================= */
+
+/* Hero */
+#hero {
+    min-height: 100vh;
+    padding-top: 54px;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    position: relative;
+}
+#hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 60% at 75% 45%, rgba(27,58,107,0.05) 0%, transparent 65%);
+    pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; }
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+}
+.hero-eyebrow .dot {
+    width: 6px; height: 6px;
+    background: #34C759;
+    border-radius: 50%;
+    animation: dot 2s ease infinite;
+}
+
+.hero-name {
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+.hero-role {
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-weight: 400;
+    color: var(--navy-700);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+}
+.hero-rule {
+    width: 32px; height: 2px;
+    background: var(--navy-700);
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+}
+.hero-desc {
+    font-size: 0.95rem;
+    color: var(--gray-500);
+    line-height: 1.75;
+    max-width: 420px;
+    margin-bottom: 2rem;
+}
+.hero-typing {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+    min-height: 1.5em;
+}
+.hero-typing .t      { color: var(--navy-700); font-weight: 500; }
+.hero-typing .cursor {
+    display: inline-block;
+    width: 1px; height: 0.95em;
+    background: var(--navy-700);
+    vertical-align: middle;
+    margin-left: 1px;
+    animation: blink 1s step-end infinite;
+}
+
+/* Botones */
+.btn-navy {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy-900);
+    color: var(--white);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.55rem 1.25rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    border: none;
+    transition: all var(--t);
+    letter-spacing: -0.01em;
+}
+.btn-navy:hover {
+    background: var(--navy-700);
+    color: var(--white);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(11,31,58,0.25);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: var(--gray-700);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 0.55rem 1.25rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    border: 1px solid var(--gray-200);
+    transition: all var(--t);
+    letter-spacing: -0.01em;
+}
+.btn-outline:hover {
+    border-color: var(--navy-200);
+    color: var(--navy-700);
+    background: var(--navy-50);
+}
+
+/* Socials */
+.hero-socials { gap: 1.25rem; margin-top: 2rem; }
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    text-decoration: none;
+    transition: color var(--t);
+}
+.social-link:hover { color: var(--navy-700); }
+.social-sep { color: var(--gray-200); font-size: 0.6rem; }
+
+/* Code block */
+.code-block {
+    background: var(--gray-50);
+    border: 1px solid var(--navy-200);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.4rem 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    line-height: 1.9;
+    box-shadow: var(--shadow-navy);
+    position: relative;
+    transition: box-shadow var(--t), border-color var(--t);
+}
+.code-block:hover {
+    box-shadow: var(--shadow-navy-hover);
+    border-color: var(--navy-500);
+}
+.code-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--navy-900), var(--navy-500), transparent);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+.cb-bar { display: flex; gap: 6px; margin-bottom: 1rem; }
+.cb-dot { width: 10px; height: 10px; border-radius: 50%; }
+.cb-dot:nth-child(1) { background: #FF5F57; }
+.cb-dot:nth-child(2) { background: #FFBD2E; }
+.cb-dot:nth-child(3) { background: #28CA41; }
+.ck { color: var(--navy-700); font-weight: 500; }
+.cs { color: #2D5016; }
+.cp { color: var(--gray-500); }
+.cc { color: #9CA3AF; font-style: italic; }
+.cn { color: #92400E; }

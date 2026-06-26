@@ -1,0 +1,46 @@
+/* =============================================
+    utilities.css — Reveal, back to top, responsive
+   ============================================= */
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+}
+
+/* Back to top */
+#backTop {
+    position: fixed;
+    bottom: 1.5rem; right: 1.5rem;
+    width: 38px; height: 38px;
+    background: var(--white);
+    color: var(--gray-500);
+    border: 1px solid var(--gray-200);
+    border-radius: 50%;
+    font-size: 0.9rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all var(--t);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+#backTop.visible   { opacity: 1; transform: translateY(0); }
+#backTop:hover     { background: var(--navy-900); color: var(--white); border-color: var(--navy-900); transform: translateY(-2px); }
+
+/* Responsive */
+@media (max-width: 991px) { .code-block { display: none !important; } }
+@media (max-width: 768px) {
+    #hero { padding-top: 4rem; }
+    .page-section, .page-section-alt, #contacto { padding: 3.5rem 0; }
+}
