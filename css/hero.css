@@ -140,27 +140,29 @@
 .social-sep { color: var(--gray-200); font-size: 0.6rem; }
 
 /* Code block */
+/* Code block — siempre dark, sin importar el tema */
 .code-block {
-    background: var(--gray-50);
-    border: 1px solid var(--navy-200);
+    background: #0D1117;
+    border: 1px solid #1B3A6B;
     border-radius: var(--radius);
     padding: 1.25rem 1.4rem 1.5rem;
     font-family: var(--mono);
     font-size: 0.76rem;
     line-height: 1.9;
-    box-shadow: var(--shadow-navy);
+    color: #C9D1D9;
+    box-shadow: 0 0 0 1px #1B3A6B, 0 8px 32px rgba(11,31,58,0.5);
     position: relative;
     transition: box-shadow var(--t), border-color var(--t);
 }
 .code-block:hover {
-    box-shadow: var(--shadow-navy-hover);
-    border-color: var(--navy-500);
+    border-color: #3B6EA8;
+    box-shadow: 0 0 0 1px #3B6EA8, 0 12px 40px rgba(11,31,58,0.6);
 }
 .code-block::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--navy-900), var(--navy-500), transparent);
+    background: linear-gradient(90deg, #0B1F3A, #3B6EA8, transparent);
     border-radius: var(--radius) var(--radius) 0 0;
 }
 .cb-bar { display: flex; gap: 6px; margin-bottom: 1rem; }
@@ -168,8 +170,10 @@
 .cb-dot:nth-child(1) { background: #FF5F57; }
 .cb-dot:nth-child(2) { background: #FFBD2E; }
 .cb-dot:nth-child(3) { background: #28CA41; }
-.ck { color: var(--navy-700); font-weight: 500; }
-.cs { color: #2D5016; }
-.cp { color: var(--gray-500); }
-.cc { color: #9CA3AF; font-style: italic; }
-.cn { color: #92400E; }
+
+/* Sintaxis — colores dark permanentes */
+.ck { color: #818CF8; font-weight: 500; }  /* keywords — indigo */
+.cs { color: #86EFAC; }                     /* strings — verde */
+.cp { color: #94A3B8; }                     /* params — gris */
+.cc { color: #475569; font-style: italic; } /* comments */
+.cn { color: #FDBA74; }                     /* nombres — naranja */
