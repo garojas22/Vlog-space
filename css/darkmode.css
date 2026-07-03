@@ -1,0 +1,27 @@
+/* =============================================
+    darkmode.css — Paleta de colores, tema oscuro
+    (activo cuando <html data-theme="dark">, ver js/theme.js)
+   ============================================= */
+
+:root[data-theme="dark"] {
+    /* --navy-900/--white siguen siendo "fondo principal" y
+       --black/--gray-700 siguen siendo "texto principal": mismo
+       nombre de variable, valor invertido para el tema oscuro. */
+    --navy-900:  #0B1220;
+    --navy-700:  #5B8FCB;
+    --navy-500:  #7FA8D9;
+    --navy-200:  #22314A;
+    --navy-50:   #101B2E;
+
+    --black:     #EDF1F7;
+    --gray-700:  #C9D1DC;
+    --gray-500:  #8B95A7;
+    --gray-200:  #24293A;
+    --gray-50:   #131722;
+    --white:     #0B0F17;
+
+    --shadow-navy:       0 0 0 1px var(--navy-200), 0 4px 20px rgba(0,0,0,0.45);
+    --shadow-navy-hover: 0 0 0 1px var(--navy-500), 0 8px 28px rgba(0,0,0,0.6);
+
+    --nav-bg: rgba(11,15,23,0.88);
+}

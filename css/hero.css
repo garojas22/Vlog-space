@@ -81,12 +81,14 @@
 }
 
 /* Botones */
+/* .btn-navy — siempre navy oscuro con texto blanco, como el code-block,
+   sin importar el tema (por eso usa colores fijos, no tokens de --navy/--white) */
 .btn-navy {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: var(--navy-900);
-    color: var(--white);
+    background: #0B1F3A;
+    color: #FFFFFF;
     font-size: 0.82rem;
     font-weight: 500;
     padding: 0.55rem 1.25rem;
@@ -97,8 +99,8 @@
     letter-spacing: -0.01em;
 }
 .btn-navy:hover {
-    background: var(--navy-700);
-    color: var(--white);
+    background: #1B3A6B;
+    color: #FFFFFF;
     transform: translateY(-1px);
     box-shadow: 0 4px 14px rgba(11,31,58,0.25);
 }

@@ -126,23 +126,25 @@
 .project-link:hover { color: var(--navy-900); gap: 8px; }
 
 /* Contacto */
-#contacto { background: var(--navy-900); padding: 5rem 0; }
+/* #contacto es una franja siempre navy oscuro con texto claro, igual que
+   el code-block, sin importar el tema — por eso usa colores fijos. */
+#contacto { background: #0B1F3A; padding: 5rem 0; }
 
 .contact-label {
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--navy-200);
+    color: #C2D4EC;
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 0.75rem;
     justify-content: center;
 }
-.contact-label::before { content: ''; width: 18px; height: 1.5px; background: var(--navy-500); }
-.contact-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; color: var(--white); letter-spacing: -0.04em; margin-bottom: 0.5rem; }
-.contact-sub   { font-size: 0.9rem; color: var(--navy-200); line-height: 1.75; max-width: 380px; margin: 0 auto 2rem; }
+.contact-label::before { content: ''; width: 18px; height: 1.5px; background: #3B6EA8; }
+.contact-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; color: #FFFFFF; letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+.contact-sub   { font-size: 0.9rem; color: #C2D4EC; line-height: 1.75; max-width: 380px; margin: 0 auto 2rem; }
 
 .contact-btn {
     display: inline-flex;
@@ -158,9 +160,9 @@
     background: transparent;
     transition: all var(--t);
 }
-.contact-btn:hover        { border-color: rgba(255,255,255,0.3); color: var(--white); background: rgba(255,255,255,0.06); transform: translateY(-1px); }
-.contact-btn.primary      { background: var(--white); color: var(--navy-900); border-color: var(--white); }
-.contact-btn.primary:hover{ background: var(--navy-50); border-color: var(--navy-50); }
+.contact-btn:hover        { border-color: rgba(255,255,255,0.3); color: #FFFFFF; background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+.contact-btn.primary      { background: #FFFFFF; color: #0B1F3A; border-color: #FFFFFF; }
+.contact-btn.primary:hover{ background: #EEF3FA; border-color: #EEF3FA; }
 
 /* Footer */
 footer { background: var(--white) !important; border-top: 1px solid var(--gray-200) !important; padding: 1.5rem 0; }

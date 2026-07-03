@@ -3,7 +3,7 @@
    ============================================= */
 
 .navbar {
-    background: rgba(255,255,255,0.88) !important;
+    background: var(--nav-bg) !important;
     backdrop-filter: saturate(180%) blur(16px);
     -webkit-backdrop-filter: saturate(180%) blur(16px);
     border-bottom: 1px solid var(--gray-200) !important;

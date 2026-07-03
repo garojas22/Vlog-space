@@ -1,0 +1,25 @@
+/* =============================================
+    lightmode.css — Paleta de colores, tema claro
+    (activo por defecto y cuando data-theme="light")
+   ============================================= */
+
+:root {
+    --navy-900:  #0B1F3A;
+    --navy-700:  #1B3A6B;
+    --navy-500:  #3B6EA8;
+    --navy-200:  #C2D4EC;
+    --navy-50:   #EEF3FA;
+
+    --black:     #0F0F11;
+    --gray-700:  #3C3C43;
+    --gray-500:  #5A6478;
+    --gray-200:  #E5E7EB;
+    --gray-50:   #F8FAFC;
+    --white:     #FFFFFF;
+
+    --shadow-navy:       0 0 0 1px var(--navy-200), 0 4px 20px rgba(11,31,58,0.10);
+    --shadow-navy-hover: 0 0 0 1px var(--navy-500), 0 8px 28px rgba(11,31,58,0.18);
+
+    /* Fondo translúcido de la navbar (depende del tema) */
+    --nav-bg: rgba(255,255,255,0.88);
+}

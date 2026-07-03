@@ -1,0 +1,48 @@
+/* =============================================
+    now.css — Sección "Ahora" (currently.log)
+   ============================================= */
+
+.now-log {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    margin-top: 1.75rem;
+    font-family: var(--mono);
+}
+
+.now-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--gray-700);
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed var(--gray-200);
+}
+.now-line:last-of-type { border-bottom: none; }
+.now-line a { color: var(--navy-700); text-decoration: none; }
+.now-line a:hover { text-decoration: underline; }
+
+.now-tag {
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 100px;
+    border: 1px solid transparent;
+}
+.now-tag.learning { color: var(--navy-700); background: var(--navy-50); border-color: var(--navy-200); }
+.now-tag.building { color: #065F46; background: #ECFDF5; border-color: #A7F3D0; }
+.now-tag.reading  { color: #92400E; background: #FFFBEB; border-color: #FDE68A; }
+.now-tag.status   { color: var(--gray-700); background: var(--white); border-color: var(--gray-200); }
+
+.now-updated {
+    margin-top: 1rem;
+    font-size: 0.68rem;
+    color: var(--gray-500);
+    text-align: right;
+}
