@@ -163,15 +163,54 @@
 .code-block::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; height: 2px;
+    top: 0; left: 0; right: 0;
+    height: 2px;
     background: linear-gradient(90deg, #0B1F3A, #3B6EA8, transparent);
-    border-radius: var(--radius) var(--radius) 0 0;
+    border-radius: 10px 10px 0 0;
 }
-.cb-bar { display: flex; gap: 6px; margin-bottom: 1rem; }
+.cb-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 1rem;
+}
 .cb-dot { width: 10px; height: 10px; border-radius: 50%; }
 .cb-dot:nth-child(1) { background: #FF5F57; }
 .cb-dot:nth-child(2) { background: #FFBD2E; }
 .cb-dot:nth-child(3) { background: #28CA41; }
+.cb-title {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.35);
+    margin-left: 6px;
+    letter-spacing: 0.04em;
+    font-family: var(--mono);
+}
+
+/* Animación de entrada línea por línea, reutiliza @keyframes termFadeIn
+   definido en sections.css (terminal-block) */
+.cb-line {
+    opacity: 0;
+    animation: termFadeIn 0.3s ease forwards;
+}
+.cb-line-1  { animation-delay: 0.1s; }
+.cb-line-2  { animation-delay: 0.25s; }
+.cb-line-3  { animation-delay: 0.4s; }
+.cb-line-4  { animation-delay: 0.55s; }
+.cb-line-5  { animation-delay: 0.7s; }
+.cb-line-6  { animation-delay: 0.85s; }
+.cb-line-7  { animation-delay: 1.0s; }
+.cb-line-8  { animation-delay: 1.15s; }
+.cb-line-9  { animation-delay: 1.3s; }
+.cb-line-10 { animation-delay: 1.45s; }
+.cb-line-11 { animation-delay: 1.6s; }
+.cb-line-12 { animation-delay: 1.75s; }
+.cb-line-13 { animation-delay: 1.9s; }
+.cb-line-14 { animation-delay: 2.05s; }
+.cb-line-15 { animation-delay: 2.2s; }
+.cb-line-16 { animation-delay: 2.35s; }
+.cb-line-17 { animation-delay: 2.5s; }
 
 /* Sintaxis — colores dark permanentes */
 .ck { color: #818CF8; font-weight: 500; }  /* keywords — indigo */

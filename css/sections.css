@@ -167,6 +167,88 @@
     margin-bottom: 0.6rem;
 }
 
+/* Terminal block — proyectos header */
+.terminal-block {
+    background: #0D1117;
+    border: 1px solid #1B3A6B;
+    border-radius: 10px;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    line-height: 1.9;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 0 0 1px #1B3A6B, 0 8px 32px rgba(11,31,58,0.4);
+    position: relative;
+    overflow: hidden;
+}
+.terminal-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0B1F3A, #3B6EA8, transparent);
+}
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
+}
+.terminal-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+}
+.terminal-dot:nth-child(1) { background: #FF5F57; }
+.terminal-dot:nth-child(2) { background: #FFBD2E; }
+.terminal-dot:nth-child(3) { background: #28CA41; }
+.terminal-title {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.35);
+    margin-left: 6px;
+    letter-spacing: 0.04em;
+}
+.terminal-body {
+    padding: 1rem 1.25rem 1.25rem;
+    color: #C9D1D9;
+}
+.terminal-line {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    animation: termFadeIn 0.3s ease forwards;
+}
+.t-cmd     { color: #3B6EA8; font-weight: 600; }
+.t-text    { color: #C9D1D9; }
+.t-check   { color: #28CA41; }
+.t-pending { color: #FFBD2E; }
+.t-name    { color: #C9D1D9; flex: 1; }
+.t-year    { color: #475569; font-size: 0.68rem; }
+.t-muted   { opacity: 0.5; }
+.t-cursor {
+    display: inline-block;
+    width: 7px; height: 0.85em;
+    background: #3B6EA8;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+/* Delays escalonados para efecto de escritura */
+.t-delay-1 { animation-delay: 0.3s; }
+.t-delay-2 { animation-delay: 0.6s; }
+.t-delay-3 { animation-delay: 0.9s; }
+.t-delay-4 { animation-delay: 1.2s; }
+.t-delay-5 { animation-delay: 1.5s; }
+.t-delay-6 { animation-delay: 1.8s; }
+
+@keyframes termFadeIn {
+    from { opacity: 0; transform: translateX(-6px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
 /* Contacto */
 /* #contacto: franja navy oscuro en modo claro; se invierte a navy claro
    en modo oscuro (ver overrides [data-theme="dark"] en darkmode.css). */

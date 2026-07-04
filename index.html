@@ -95,25 +95,25 @@
                             <div class="cb-dot"></div>
                             <div class="cb-dot"></div>
                             <div class="cb-dot"></div>
+                            <span class="cb-title">gabriel_rojas.profile.js</span>
                         </div>
-<span class="cc">// gabriel_rojas.profile.js</span><br>
-<span class="ck">const</span> <span class="cn">developer</span> = {<br>
-&nbsp;&nbsp;<span class="cs">name</span>: <span class="cp">"Gabriel A. Rojas González"</span>,<br>
-&nbsp;&nbsp;<span class="cs">role</span>: <span class="cp">"Junior Developer"</span>,<br>
-&nbsp;&nbsp;<span class="cs">education</span>: <span class="cp">"TSU Informática · UBA"</span>,<br>
-&nbsp;&nbsp;<span class="cs">location</span>: <span class="cp">"Turmero, Venezuela 🇻🇪"</span>,<br>
-&nbsp;&nbsp;<span class="cs">stack</span>: [<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"JavaScript"</span>, <span class="cp">"Python"</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Java"</span>, <span class="cp">"C"</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"HTML5"</span>, <span class="cp">"CSS3"</span><br>
-&nbsp;&nbsp;],<br>
-&nbsp;&nbsp;<span class="cs">available</span>: <span class="ck">true</span>,<br>
-&nbsp;&nbsp;<span class="cs">openTo</span>: [<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Pasantías"</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Freelance"</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Remoto / Híbrido"</span><br>
-&nbsp;&nbsp;]<br>
-};
+                        <div class="cb-line cb-line-1"><span class="ck">const</span> <span class="cn">developer</span> = {</div>
+                        <div class="cb-line cb-line-2">&nbsp;&nbsp;<span class="cs">name</span>: <span class="cp">"Gabriel A. Rojas González"</span>,</div>
+                        <div class="cb-line cb-line-3">&nbsp;&nbsp;<span class="cs">role</span>: <span class="cp">"Junior Developer"</span>,</div>
+                        <div class="cb-line cb-line-4">&nbsp;&nbsp;<span class="cs">education</span>: <span class="cp">"TSU Informática · UBA"</span>,</div>
+                        <div class="cb-line cb-line-5">&nbsp;&nbsp;<span class="cs">location</span>: <span class="cp">"Turmero, Venezuela 🇻🇪"</span>,</div>
+                        <div class="cb-line cb-line-6">&nbsp;&nbsp;<span class="cs">stack</span>: [</div>
+                        <div class="cb-line cb-line-7">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"JavaScript"</span>, <span class="cp">"Python"</span>,</div>
+                        <div class="cb-line cb-line-8">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Java"</span>, <span class="cp">"C"</span>,</div>
+                        <div class="cb-line cb-line-9">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"HTML5"</span>, <span class="cp">"CSS3"</span></div>
+                        <div class="cb-line cb-line-10">&nbsp;&nbsp;],</div>
+                        <div class="cb-line cb-line-11">&nbsp;&nbsp;<span class="cs">available</span>: <span class="ck">true</span>,</div>
+                        <div class="cb-line cb-line-12">&nbsp;&nbsp;<span class="cs">openTo</span>: [</div>
+                        <div class="cb-line cb-line-13">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Pasantías"</span>,</div>
+                        <div class="cb-line cb-line-14">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Freelance"</span>,</div>
+                        <div class="cb-line cb-line-15">&nbsp;&nbsp;&nbsp;&nbsp;<span class="cp">"Remoto / Híbrido"</span></div>
+                        <div class="cb-line cb-line-16">&nbsp;&nbsp;]</div>
+                        <div class="cb-line cb-line-17">};</div>
                     </div>
                 </div>
             </div>
@@ -176,52 +176,7 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-    <script>
-    // Typing Animation como componente React
-    const { useState, useEffect } = React;
-
-    function TypingAnimation() {
-        const phrases = [
-            "Desarrollador Frontend",
-            "Estudiante TSU Informática",
-            "Apasionado por el Backend",
-            "Disponible para pasantías"
-        ];
-        const [text, setText] = useState('');
-        const [pIdx, setPIdx] = useState(0);
-        const [deleting, setDeleting] = useState(false);
-
-        useEffect(() => {
-            const current = phrases[pIdx];
-            const speed = deleting ? 40 : 85;
-
-            const timer = setTimeout(() => {
-                if (!deleting) {
-                    setText(current.slice(0, text.length + 1));
-                    if (text.length + 1 === current.length) {
-                        setTimeout(() => setDeleting(true), 2000);
-                    }
-                } else {
-                    setText(current.slice(0, text.length - 1));
-                    if (text.length - 1 === 0) {
-                        setDeleting(false);
-                        setPIdx((pIdx + 1) % phrases.length);
-                    }
-                }
-            }, speed);
-
-            return () => clearTimeout(timer);
-        }, [text, deleting, pIdx]);
-
-        return React.createElement('span', null,
-            React.createElement('span', { className: 't' }, text),
-            React.createElement('span', { className: 'cursor' })
-        );
-    }
-
-    const root = ReactDOM.createRoot(document.getElementById('typing-root'));
-    root.render(React.createElement(TypingAnimation));
-    </script>
+    <script src="js/typing.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="js/index.js"></script>
