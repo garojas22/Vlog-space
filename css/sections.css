@@ -92,7 +92,7 @@
 /* Proyectos */
 .project-card {
     background: var(--white);
-    border: 1px solid var(--gray-200);
+    border: 1px solid var(--navy-200) !important;
     border-radius: var(--radius);
     padding: 1.6rem;
     height: 100%;
@@ -111,7 +111,7 @@
     transform-origin: left;
     transition: transform 0.3s var(--ease);
 }
-.project-card:hover { border-color: var(--navy-200); box-shadow: var(--shadow-navy); transform: translateY(-2px); }
+.project-card:hover { border-color: var(--navy-500) !important; box-shadow: var(--shadow-navy-hover); transform: translateY(-2px); }
 .project-card:hover::before { transform: scaleX(1); }
 
 .project-num   { font-family: var(--mono); font-size: 0.62rem; color: var(--navy-500); margin-bottom: 0.6rem; letter-spacing: 0.04em; }
@@ -124,11 +124,45 @@
 
 .project-link  { display: inline-flex; align-items: center; gap: 4px; font-size: 0.78rem; font-weight: 500; color: var(--navy-700); text-decoration: none; transition: gap var(--t), color var(--t); margin-top: auto; }
 .project-link:hover { color: var(--navy-900); gap: 8px; }
+.project-link-disabled { display: inline-flex; align-items: center; font-size: 0.78rem; font-weight: 500; color: var(--gray-500); margin-top: auto; }
+
+/* Estados de proyecto: badges y card "en desarrollo" */
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.62rem;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 100px;
+    margin-bottom: 0.5rem;
+    align-self: flex-start;
+}
+.badge-completado {
+    background: #ECFDF5;
+    color: #065F46;
+    border: 1px solid #A7F3D0;
+}
+.badge-desarrollo {
+    background: #FFFBEB;
+    color: #92400E;
+    border: 1px solid #FCD34D;
+}
+.project-card.en-desarrollo {
+    opacity: 0.75;
+    border-color: #FCD34D !important;
+}
+.project-year {
+    font-size: 0.62rem;
+    color: var(--gray-500);
+    font-family: var(--mono);
+    margin-bottom: 0.6rem;
+}
 
 /* Contacto */
-/* #contacto es una franja siempre navy oscuro con texto claro, igual que
-   el code-block, sin importar el tema — por eso usa colores fijos. */
-#contacto { background: #0B1F3A; padding: 5rem 0; }
+/* #contacto: franja navy oscuro en modo claro; se invierte a navy claro
+   en modo oscuro (ver overrides [data-theme="dark"] en darkmode.css). */
+#contacto { background: var(--navy-900); padding: 5rem 0; }
 
 .contact-label {
     font-size: 0.68rem;
@@ -143,8 +177,10 @@
     justify-content: center;
 }
 .contact-label::before { content: ''; width: 18px; height: 1.5px; background: #3B6EA8; }
-.contact-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; color: #FFFFFF; letter-spacing: -0.04em; margin-bottom: 0.5rem; }
-.contact-sub   { font-size: 0.9rem; color: #C2D4EC; line-height: 1.75; max-width: 380px; margin: 0 auto 2rem; }
+#contacto .contact-title,
+#contacto .contact-sub { color: var(--white); }
+.contact-title { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 600; letter-spacing: -0.04em; margin-bottom: 0.5rem; }
+.contact-sub   { font-size: 0.9rem; line-height: 1.75; max-width: 380px; margin: 0 auto 2rem; }
 
 .contact-btn {
     display: inline-flex;

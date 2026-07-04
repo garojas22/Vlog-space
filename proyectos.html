@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('vlogspace-theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VlogSpace</title>
@@ -53,8 +62,9 @@
             <div class="row g-4">
 
                 <div class="col-md-6 reveal">
-                    <div class="project-card">
+                    <div class="project-card en-desarrollo">
                         <p class="project-num">001</p>
+                        <span class="badge-status badge-desarrollo">En desarrollo</span>
                         <h3 class="project-title">LimpioVen Page 💻</h3>
                         <p class="project-type">Frontend / Web</p>
                         <p class="project-desc">
@@ -66,13 +76,14 @@
                             <span class="project-tag">Codespaces</span>
                             <span class="project-tag">Responsive</span>
                         </div>
-                        <a href="https://github.com/garojas22" target="_blank" class="project-link">Ver en GitHub →</a>
+                        <span class="project-link-disabled">Próximamente</span>
                     </div>
                 </div>
 
                 <div class="col-md-6 reveal">
-                    <div class="project-card">
+                    <div class="project-card en-desarrollo">
                         <p class="project-num">002</p>
+                        <span class="badge-status badge-desarrollo">En desarrollo</span>
                         <h3 class="project-title">Simulador del Mundial ⚽</h3>
                         <p class="project-type">JavaScript / Algoritmia</p>
                         <p class="project-desc">
@@ -84,13 +95,15 @@
                             <span class="project-tag">Bootstrap 5</span>
                             <span class="project-tag">DOM API</span>
                         </div>
-                        <a href="https://github.com/garojas22" target="_blank" class="project-link">Ver en GitHub →</a>
+                        <span class="project-link-disabled">Próximamente</span>
                     </div>
                 </div>
 
                 <div class="col-md-6 reveal">
                     <div class="project-card">
                         <p class="project-num">003</p>
+                        <span class="badge-status badge-completado">Completado</span>
+                        <p class="project-year">2022</p>
                         <h3 class="project-title">Calculadora JS 🧮</h3>
                         <p class="project-type">JavaScript / DOM</p>
                         <p class="project-desc">
@@ -109,6 +122,8 @@
                 <div class="col-md-6 reveal">
                     <div class="project-card">
                         <p class="project-num">004</p>
+                        <span class="badge-status badge-completado">Completado</span>
+                        <p class="project-year">2022</p>
                         <h3 class="project-title">Semáforo Interactivo 🚦</h3>
                         <p class="project-type">React / Componentes</p>
                         <p class="project-desc">
@@ -127,6 +142,8 @@
                 <div class="col-md-6 reveal">
                     <div class="project-card">
                         <p class="project-num">005</p>
+                        <span class="badge-status badge-completado">Completado</span>
+                        <p class="project-year">2022</p>
                         <h3 class="project-title">Simple Weather App 🌤️</h3>
                         <p class="project-type">JavaScript / API REST</p>
                         <p class="project-desc">
