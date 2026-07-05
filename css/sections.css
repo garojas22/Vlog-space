@@ -89,10 +89,63 @@
 }
 .tech-pill:hover { background: var(--navy-700); color: var(--white); border-color: var(--navy-700); }
 
+/* Facet cards — sobremi */
+.facet-card {
+    background: var(--white);
+    border: 1px solid var(--navy-200);
+    border-top: 2px solid var(--navy-700);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    height: 100%;
+    box-shadow: var(--shadow-navy);
+    transition: all var(--t);
+    display: flex;
+    flex-direction: column;
+}
+.facet-card:hover {
+    border-color: var(--navy-500);
+    box-shadow: var(--shadow-navy-hover);
+    transform: translateY(-2px);
+}
+.facet-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+}
+.facet-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--black);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+.facet-desc {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    line-height: 1.7;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+.facet-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: auto;
+}
+.facet-tag {
+    background: var(--navy-50);
+    border: 1px solid var(--navy-200);
+    color: var(--navy-700);
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
 /* Proyectos */
 .project-card {
     background: var(--white);
-    border: 1px solid var(--navy-200) !important;
+    border: 1px solid #C2D4EC !important;
     border-radius: var(--radius);
     padding: 1.6rem;
     height: 100%;
@@ -102,7 +155,11 @@
     position: relative;
     overflow: hidden;
 }
-.project-card:hover { border-color: var(--navy-500) !important; box-shadow: var(--shadow-navy-hover); transform: translateY(-2px); }
+.project-card:hover {
+    border-color: #1B3A6B !important;
+    box-shadow: 0 0 0 1px #1B3A6B, 0 8px 28px rgba(11,31,58,0.18);
+    transform: translateY(-2px);
+}
 
 .project-num   { font-family: var(--mono); font-size: 0.62rem; color: var(--navy-500); margin-bottom: 0.6rem; letter-spacing: 0.04em; }
 .project-title { font-size: 0.97rem; font-weight: 600; color: var(--black); margin-bottom: 0.15rem; letter-spacing: -0.02em; }
@@ -156,7 +213,7 @@
 }
 .project-card.proximamente:hover {
     border-color: #34D399 !important;
-    box-shadow: 0 4px 20px rgba(52, 211, 153, 0.18);
+    box-shadow: 0 0 0 1px #34D399, 0 8px 20px rgba(52,211,153,0.18);
     opacity: 0.9;
     transform: translateY(-2px);
 }
@@ -228,6 +285,12 @@
 .t-name    { color: #C9D1D9; flex: 1; }
 .t-year    { color: #475569; font-size: 0.68rem; }
 .t-muted   { opacity: 0.5; }
+
+/* .terminal-line.prose: para líneas de oración continua (ej. vision.md),
+   donde t-name/t-year deben leerse seguidos en vez de que t-year quede
+   empujado al borde derecho como en el listado de proyectos */
+.terminal-line.prose .t-name { flex: none; }
+.terminal-line.prose .t-year { font-size: inherit; }
 .t-cursor {
     display: inline-block;
     width: 7px; height: 0.85em;
@@ -243,6 +306,8 @@
 .t-delay-4 { animation-delay: 1.2s; }
 .t-delay-5 { animation-delay: 1.5s; }
 .t-delay-6 { animation-delay: 1.8s; }
+.t-delay-7 { animation-delay: 2.1s; }
+.t-delay-8 { animation-delay: 2.4s; }
 
 @keyframes termFadeIn {
     from { opacity: 0; transform: translateX(-6px); }
