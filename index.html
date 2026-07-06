@@ -143,19 +143,94 @@
 
     <!-- CONTACTO -->
     <section id="contacto">
-        <div class="container text-center ">
-            <div class="contact-label">contacto</div>
-            <h2 class="contact-title">¿Hablamos?</h2>
-            <p class="contact-sub">
-                Disponible para pasantías, proyectos de desarrollo web o cualquier oportunidad donde pueda seguir creciendo.
-            </p>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-                <a href="mailto:gabrielrojas1903@gmail.com" class="contact-btn primary">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
-                    gabrielrojas1903@gmail.com
-                </a>
-                <a href="https://www.linkedin.com/in/gabriel-rojas-8bb4b523a/" target="_blank" class="contact-btn">LinkedIn</a>
-                <a href="https://github.com/garojas22" target="_blank" class="contact-btn">GitHub</a>
+        <div class="container reveal">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center mb-5">
+                    <div class="contact-label">contacto</div>
+                    <h2 class="contact-title">¿Hablamos?</h2>
+                    <p class="contact-sub">
+                        Disponible para pasantías, proyectos de desarrollo
+                        web o cualquier oportunidad donde pueda seguir
+                        aprendiendo y construyendo cosas con impacto.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                        <a href="mailto:gabrielrojas1903@gmail.com"
+                            class="contact-btn primary">
+                            <svg width="14" height="14" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2
+                                2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1
+                                0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1z
+                                m13 2.383-4.708 2.825L15 11.105zm-.034
+                                6.876-5.64-3.471L8 9.583l-1.326-.795-5.64
+                                3.47A1 1 0 0 0 2 13h12a1 1 0 0 0
+                                .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                            </svg>
+                            Email directo
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-rojas-8bb4b523a/"
+                            target="_blank" class="contact-btn">LinkedIn</a>
+                        <a href="https://github.com/garojas22"
+                            target="_blank" class="contact-btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="contact-form-card">
+
+                        <div class="terminal-bar mb-4" style="margin: -1.5rem -1.5rem 1.5rem; border-radius: 10px 10px 0 0;">
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <span class="terminal-title">nuevo_mensaje.send()</span>
+                        </div>
+
+                        <div id="form-estado" class="form-estado" style="display:none"></div>
+
+                        <div id="contacto-form">
+                            <div class="form-group mb-3">
+                                <label class="form-label-custom">Nombre</label>
+                                <input
+                                    type="text"
+                                    id="form-nombre"
+                                    class="form-input-custom"
+                                    placeholder="Tu nombre completo"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label class="form-label-custom">Email</label>
+                                <input
+                                    type="email"
+                                    id="form-email"
+                                    class="form-input-custom"
+                                    placeholder="tu@email.com"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label class="form-label-custom">Mensaje</label>
+                                <textarea
+                                    id="form-mensaje"
+                                    class="form-input-custom"
+                                    rows="4"
+                                    placeholder="Cuéntame sobre tu proyecto u oportunidad..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button id="form-submit" class="contact-btn primary w-100 justify-content-center">
+                                <span id="btn-texto">Enviar mensaje</span>
+                                <span id="btn-spinner" style="display:none">Enviando...</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

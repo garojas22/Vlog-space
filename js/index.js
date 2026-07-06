@@ -6,7 +6,9 @@
 import { initReveal } from './reveal.js';
 import { initNavbar  } from './navbar.js';
 import { initTheme   } from './theme.js';
+import { initContacto } from './contacto.js';
 
 initReveal();
 initNavbar();
 initTheme();
+initContacto();

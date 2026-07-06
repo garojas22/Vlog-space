@@ -359,3 +359,76 @@
 footer { background: var(--white) !important; border-top: 1px solid var(--gray-200) !important; padding: 1.5rem 0; }
 .footer-text   { font-size: 0.75rem; color: var(--gray-500) !important; letter-spacing: -0.01em; }
 .footer-accent { color: var(--navy-700); }
+
+/* ── FORMULARIO DE CONTACTO ─────────────────────── */
+.contact-form-card {
+    background: #0D1117;
+    border: 1px solid #1B3A6B;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 0 0 1px #1B3A6B, 0 8px 32px rgba(11,31,58,0.4);
+    position: relative;
+    overflow: hidden;
+}
+.contact-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0B1F3A, #3B6EA8, transparent);
+}
+
+.form-label-custom {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8888A8;
+    margin-bottom: 0.4rem;
+    font-family: var(--mono);
+}
+
+.form-input-custom {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(59,110,168,0.3);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.9rem;
+    color: #C9D1D9;
+    font-family: var(--font);
+    font-size: 0.88rem;
+    transition: border-color var(--t), box-shadow var(--t);
+    outline: none;
+    resize: none;
+}
+.form-input-custom::placeholder {
+    color: #475569;
+}
+.form-input-custom:focus {
+    border-color: #3B6EA8;
+    box-shadow: 0 0 0 3px rgba(59,110,168,0.15);
+}
+
+/* Estado de respuesta del formulario */
+.form-estado {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: var(--mono);
+}
+.form-estado.exito {
+    background: rgba(52,211,153,0.1);
+    border: 1px solid #34D399;
+    color: #34D399;
+}
+.form-estado.error {
+    background: rgba(239,68,68,0.1);
+    border: 1px solid #EF4444;
+    color: #EF4444;
+}
+
+/* Light mode — el form siempre oscuro como los terminales */
+/* No necesita overrides de light mode */
