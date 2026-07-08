@@ -14,7 +14,7 @@
 // URL de la API — en desarrollo apunta a local,
 // en producción apunta a Railway.
 // Cambiar esta URL cuando la API esté deployada en Railway.
-const API_URL = "http://localhost:8000/contacto";
+const API_URL = "https://vlog-space-production.up.railway.app/contacto";
 
 export function initContacto() {
 
