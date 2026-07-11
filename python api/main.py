@@ -10,8 +10,15 @@ como email al correo del portafolio.
 Flujo:
 1. El formulario HTML hace una petición POST a /contacto
 2. FastAPI valida que los datos estén completos
-3. Python arma el email y lo envía via Gmail SMTP
+3. Python arma el email y lo envía via la API HTTPS de Resend
 4. La API responde si fue exitoso o hubo error
+
+Nota: este archivo usaba antes Gmail SMTP (aiosmtplib) para
+enviar el correo. Railway bloquea las conexiones salientes por
+los puertos SMTP (25, 465, 587, 2525) en los planes Free/Trial/
+Hobby, así que el envío nunca llegaba a completarse (fallaba
+tras 60s de timeout). Por eso ahora se usa la API de Resend
+sobre HTTPS, que no depende de ningún puerto bloqueado.
 """
 
 # ── IMPORTACIONES ────────────────────────────────────
@@ -26,12 +33,9 @@ from pydantic import BaseModel, EmailStr
 # pueda hablar con esta API sin que el navegador lo bloquee
 from fastapi.middleware.cors import CORSMiddleware
 
-# aiosmtplib: librería para enviar emails de forma asíncrona
-# (sin bloquear el servidor mientras espera que el email salga)
-import aiosmtplib
-
-# EmailMessage: estructura estándar de Python para armar emails
-from email.message import EmailMessage
+# httpx: cliente HTTP asíncrono — lo usamos para llamar a la
+# API de Resend por HTTPS en vez de hablar SMTP directamente
+import httpx
 
 # os y dotenv: para leer las credenciales del archivo .env
 # sin escribirlas directamente en el código
@@ -44,8 +48,7 @@ from dotenv import load_dotenv
 # en el entorno del servidor (útil en Railway)
 load_dotenv()
 
-EMAIL_USER     = os.getenv("EMAIL_USER")
-EMAIL_PASS     = os.getenv("EMAIL_PASS")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
 EMAIL_DESTINO  = os.getenv("EMAIL_DESTINO")
 ALLOWED_ORIGIN = os.getenv("ALLOWED_ORIGIN", "*")
 
@@ -79,6 +82,13 @@ class FormularioContacto(BaseModel):
     email:   EmailStr   # Email (validado automáticamente)
     mensaje: str        # Mensaje de contacto
 
+# ── UTILIDAD — sanitizar texto para headers de email ─
+# Un salto de línea dentro de un header (ej. el Subject)
+# podría usarse para inyectar headers adicionales en el
+# email (CRLF injection). Lo quitamos antes de usarlo.
+def sanitizar_header(valor: str) -> str:
+    return valor.replace("\r", "").replace("\n", "")
+
 # ── RUTA RAÍZ — health check ─────────────────────────
 # Ruta simple para verificar que la API está viva.
 # Útil para Railway y para debuggear.
@@ -91,30 +101,28 @@ async def raiz():
 
 # ── RUTA PRINCIPAL — recibir formulario ──────────────
 # Esta es la ruta que llama el JavaScript del formulario.
-# Recibe los datos, arma el email y lo envía.
+# Recibe los datos, arma el email y lo envía vía Resend.
 @app.post("/contacto")
 async def recibir_contacto(datos: FormularioContacto):
     """
     Recibe nombre, email y mensaje del formulario,
-    y los envía como email a Gabriel via Gmail.
+    y los envía como email a Gabriel via la API de Resend.
     """
 
     # Verificar que las credenciales estén configuradas
     # Si no están, la API no puede enviar emails
-    if not all([EMAIL_USER, EMAIL_PASS, EMAIL_DESTINO]):
+    if not all([RESEND_API_KEY, EMAIL_DESTINO]):
         raise HTTPException(
             status_code=500,
             detail="Error de configuración: credenciales de email no encontradas"
         )
 
-    # Armar el contenido del email que llegará a tu Gmail
-    email = EmailMessage()
-    email["From"]    = EMAIL_USER
-    email["To"]      = EMAIL_DESTINO
-    email["Subject"] = f"[Vlog Space] Nuevo mensaje de {datos.nombre}"
+    # Sanitizar el nombre antes de usarlo en el Subject,
+    # para que no pueda inyectar headers de email
+    nombre_seguro = sanitizar_header(datos.nombre)
 
     # Cuerpo del email — lo que verás en tu bandeja de entrada
-    email.set_content(f"""
+    cuerpo = f"""
 Nuevo mensaje recibido desde tu portfolio:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -127,19 +135,26 @@ Mensaje:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Enviado desde garojas22.github.io/Vlog-space
-    """)
+    """
 
-    # Intentar enviar el email via Gmail SMTP
-    # SMTP es el protocolo estándar para envío de emails
+    # Intentar enviar el email via la API HTTPS de Resend
+    # (reemplaza a Gmail SMTP, bloqueado en Railway Free/Trial/Hobby)
     try:
-        await aiosmtplib.send(
-            email,
-            hostname="smtp.gmail.com",  # Servidor de Gmail
-            port=587,                    # Puerto estándar SMTP con TLS
-            username=EMAIL_USER,
-            password=EMAIL_PASS,
-            start_tls=True,             # Cifrado para que nadie intercepte
-        )
+        async with httpx.AsyncClient() as client:
+            respuesta = await client.post(
+                "https://api.resend.com/emails",
+                headers={"Authorization": f"Bearer {RESEND_API_KEY}"},
+                json={
+                    "from": "Vlog Space <onboarding@resend.dev>",
+                    "to": [EMAIL_DESTINO],
+                    "reply_to": datos.email,
+                    "subject": f"[Vlog Space] Nuevo mensaje de {nombre_seguro}",
+                    "text": cuerpo,
+                },
+                timeout=10,  # segundos — falla rápido en vez de colgar la petición
+            )
+            respuesta.raise_for_status()
+
         # Si llegamos aquí, el email se envió correctamente
         return {
             "exito": True,
