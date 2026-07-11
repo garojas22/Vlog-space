@@ -1,5 +1,5 @@
 /* =============================================
-   theme.js — Dark / Light mode
+    theme.js — Dark / Light mode
    ============================================= */
 
 const STORAGE_KEY = 'vlogspace-theme';

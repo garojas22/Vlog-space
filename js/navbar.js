@@ -1,5 +1,5 @@
 /* =============================================
-   navbar.js — Scroll effect + nav link activo
+    navbar.js — Scroll effect + nav link activo
    ============================================= */
 
 export function initNavbar() {

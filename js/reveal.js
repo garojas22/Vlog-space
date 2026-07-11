@@ -1,5 +1,5 @@
 /* =============================================
-   reveal.js — Animación de entrada por scroll
+    reveal.js — Animación de entrada por scroll
    ============================================= */
 
 export function initReveal() {
