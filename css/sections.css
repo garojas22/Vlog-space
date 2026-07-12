@@ -134,6 +134,29 @@
     gap: 4px;
     margin-top: auto;
 }
+/* .facet-card-featured: variante horizontal para usar como teaser de
+   una sola card (ej. index.html) — ícono grande a la izquierda,
+   contenido a la derecha. Mismo borde/hover que .facet-card normal,
+   solo cambia el layout interno. */
+.facet-card.facet-card-featured {
+    max-width: 760px;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 2rem 2.25rem;
+}
+.facet-card-featured .facet-icon { font-size: 3.2rem; margin-bottom: 0; flex-shrink: 0; }
+/* Título + descripción + tags viajan juntos como un solo bloque al
+   lado del ícono, en vez de volverse columnas sueltas del row. */
+.facet-card-featured .facet-card-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.facet-card-featured .facet-desc { margin-bottom: 0.9rem; }
+@media (max-width: 767px) {
+    .facet-card.facet-card-featured { flex-direction: column; text-align: center; padding: 1.75rem; }
+    .facet-card-featured .facet-icon { margin-bottom: 0.75rem; }
+    .facet-card-featured .facet-tags { justify-content: center; }
+}
+
 .facet-tag {
     background: var(--navy-50);
     border: 1px solid var(--navy-200);
