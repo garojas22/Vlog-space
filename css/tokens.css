@@ -20,9 +20,10 @@
     --font-code:     'JetBrains Mono', monospace;
     --font-body:     'Inter', sans-serif;
 
-    /* Exclusiva del h1 "Gabriel Alejandro" en index.html — Syne solo
-       se carga en el <head> de esa página, ningún otro elemento la usa. */
-    --font-name: 'Syne', sans-serif;
+    /* Exclusiva del h1 "Gabriel Alejandro" en index.html — Geist Pixel
+       solo se carga en el <head> de esa página, ningún otro elemento
+       la usa. Solo tiene el peso 400 (sin variantes bold reales). */
+    --font-name: 'Geist Pixel', monospace;
 
     --radius:    8px;
     --radius-sm: 5px;
