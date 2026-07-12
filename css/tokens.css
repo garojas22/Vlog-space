@@ -10,6 +10,20 @@
     --font:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --mono:      'JetBrains Mono', 'SF Mono', monospace;
 
+    /* Sistema tipográfico por rol: display (h1 hero, títulos de sección,
+       brand), terminal (prompts, eyebrows, labels/tags), code (bloques
+       tipo terminal/code-block) y body (texto general). --font-body y
+       --font-code equivalen a --font/--mono; se dejan --font/--mono
+       para no romper elementos que aún no migraron a un rol explícito. */
+    --font-display:  'Space Grotesk', sans-serif;
+    --font-terminal: 'IBM Plex Mono', monospace;
+    --font-code:     'JetBrains Mono', monospace;
+    --font-body:     'Inter', sans-serif;
+
+    /* Exclusiva del h1 "Gabriel Alejandro" en index.html — Syne solo
+       se carga en el <head> de esa página, ningún otro elemento la usa. */
+    --font-name: 'Syne', sans-serif;
+
     --radius:    8px;
     --radius-sm: 5px;
     --ease:      cubic-bezier(0.4, 0, 0.2, 1);
@@ -20,7 +34,7 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-    font-family: var(--font);
+    font-family: var(--font-body);
     background: var(--white);
     color: var(--black);
     -webkit-font-smoothing: antialiased;
@@ -32,7 +46,7 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--navy-200); border-radius: 4px; }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: var(--font);
+    font-family: var(--font-body);
     color: var(--black);
     letter-spacing: -0.025em;
     line-height: 1.15;

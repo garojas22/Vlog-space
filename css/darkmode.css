@@ -24,6 +24,9 @@
     --shadow-navy-hover: 0 0 0 1px var(--navy-500), 0 8px 28px rgba(0,0,0,0.6);
 
     --nav-bg: rgba(11,15,23,0.88);
+
+    /* Verde de terminal (prompts/estado del hero) */
+    --term-green: #4ADE80;
 }
 
 /* Cards de proyectos: borde azul visible sobre fondo oscuro */

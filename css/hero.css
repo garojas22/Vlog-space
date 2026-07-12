@@ -11,6 +11,12 @@
     background: var(--white);
     position: relative;
 }
+@media (min-width: 992px) {
+    /* Respiro extra en desktop entre el navbar fijo y el primer
+       prompt del terminal — en móvil el padding-top ya se controla
+       aparte en utilities.css y no debe tocarse. */
+    #hero { padding-top: 6.5rem; }
+}
 #hero::before {
     content: '';
     position: absolute; inset: 0;
@@ -19,6 +25,9 @@
 }
 .hero-content { position: relative; z-index: 1; }
 
+/* .hero-eyebrow / .hero-rule quedan sin uso desde el rediseño del hero
+   como "sesión de terminal" (ver .term-prompt más abajo) — se dejan
+   definidas por si se vuelven a necesitar en otra sección. */
 .hero-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -35,27 +44,40 @@
     border-radius: 50%;
     animation: dot 2s ease infinite;
 }
-
-.hero-name {
-    font-size: clamp(1.9rem, 4vw, 2.75rem);
-    font-weight: 600;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
-    color: var(--black);
-    margin-bottom: 0.5rem;
-}
-.hero-role {
-    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-    font-weight: 400;
-    color: var(--navy-700);
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.01em;
-}
 .hero-rule {
     width: 32px; height: 2px;
     background: var(--navy-700);
     margin-bottom: 1.5rem;
     border-radius: 2px;
+}
+
+/* Hero — sesión de terminal */
+.term-prompt {
+    font-family: var(--font-terminal);
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+}
+.term-user { color: var(--term-green); font-weight: 500; }
+.term-sep  { color: var(--gray-500); }
+.term-cmd  { color: var(--black); }
+
+.hero-name {
+    font-family: var(--font-name);
+    font-size: clamp(2rem, 6vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--black);
+    margin-bottom: 0.4rem;
+}
+.hero-role {
+    font-family: var(--font-terminal);
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    font-weight: 400;
+    color: var(--navy-700);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
 }
 .hero-desc {
     font-size: 0.95rem;
@@ -64,10 +86,16 @@
     max-width: 420px;
     margin-bottom: 2rem;
 }
+/* .hero-output se combina con .hero-desc: agrega el "borde de salida
+   de comando" sin duplicar tamaño/color/line-height del texto */
+.hero-output {
+    border-left: 2px solid rgba(59, 110, 168, 0.4);
+    padding-left: 1rem;
+}
 .hero-typing {
     font-size: 0.88rem;
     color: var(--gray-500);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     min-height: 1.5em;
 }
 .hero-typing .t      { color: var(--navy-700); font-weight: 500; }
@@ -78,6 +106,17 @@
     vertical-align: middle;
     margin-left: 1px;
     animation: blink 1s step-end infinite;
+}
+.hero-status-line {
+    font-family: var(--font-terminal);
+    color: var(--term-green);
+    font-size: 0.78rem;
+    margin-bottom: 2rem;
+}
+
+/* Móvil: los prompts no deben desbordar en pantallas angostas (~390px) */
+@media (max-width: 480px) {
+    .term-prompt { font-size: 0.78rem; word-break: break-word; }
 }
 
 /* Botones */
@@ -148,7 +187,7 @@
     border: 1px solid #1B3A6B;
     border-radius: 10px;
     padding: 0;
-    font-family: var(--mono);
+    font-family: var(--font-code);
     font-size: 0.76rem;
     line-height: 1.9;
     color: #C9D1D9;
@@ -187,7 +226,7 @@
     color: rgba(255,255,255,0.35);
     margin-left: 6px;
     letter-spacing: 0.04em;
-    font-family: var(--mono);
+    font-family: var(--font-code);
 }
 .cb-content {
     padding: 1rem 1.25rem 1.25rem;

@@ -27,6 +27,7 @@
 
 .now-tag {
     flex-shrink: 0;
+    font-family: var(--font-terminal);
     font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.06em;
