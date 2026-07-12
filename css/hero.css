@@ -79,6 +79,9 @@
     margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
 }
+/* En dark mode navy-700 ya se ve perfecto (no se toca) — en light mode
+   se pide un azul más profundo que el navy-700 claro por defecto. */
+[data-theme="light"] .hero-role { color: var(--navy-900); }
 .hero-desc {
     font-size: 0.95rem;
     color: var(--gray-500);

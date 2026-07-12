@@ -37,7 +37,7 @@
                 <ul class="navbar-nav gap-1 align-items-lg-center">
                     <li><a class="nav-link" href="sobremi.html">Sobre Mí</a></li>
                     <li><a class="nav-link" href="proyectos.html">Proyectos</a></li>
-                    <li><a class="nav-link" href="#contacto">Contacto <span class="nav-badge">Disponible</span></a></li>
+                    <li><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
                 <button id="themeToggle" title="Cambiar tema">🌙</button>
             </div>
@@ -136,14 +136,117 @@
                 <div class="col-lg-8 mx-auto text-center">
                     <div class="section-eyebrow justify-content-center">ahora</div>
                     <h2 class="section-title">¿En qué estoy trabajando?</h2>
-                    <div class="now-log text-start">
-                        <div class="now-line"><span class="now-tag learning">aprendiendo</span> Estructuras de datos avanzadas y bases de datos relacionales</div>
-                        <div class="now-line"><span class="now-tag building">construyendo</span> Un nuevo proyecto para el <a href="proyectos.html">portafolio</a></div>
-                        <div class="now-line"><span class="now-tag reading">leyendo</span> Documentación de Python aplicada a backend</div>
-                        <div class="now-line"><span class="now-tag status">estado</span> Buscando activamente pasantías y roles junior</div>
-                        <div class="now-updated">Última actualización: <time datetime="2026-07">julio 2026</time></div>
+                    <div class="terminal-block now-terminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <span class="terminal-title">ahora.log</span>
+                        </div>
+                        <div class="terminal-body text-start">
+                            <div class="now-line"><span class="now-tag learning">aprendiendo</span> Estructuras de datos avanzadas y bases de datos relacionales</div>
+                            <div class="now-line"><span class="now-tag building">construyendo</span> Un nuevo proyecto para el <a href="proyectos.html">portafolio</a></div>
+                            <div class="now-line"><span class="now-tag reading">leyendo</span> Documentación de Python aplicada a backend</div>
+                            <div class="now-line"><span class="now-tag status">estado</span> Buscando activamente pasantías y roles junior</div>
+                            <div class="now-updated">Última actualización: <time datetime="2026-07">julio 2026</time></div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÁS ALLÁ DEL CÓDIGO (teaser Sobre Mí) -->
+    <section class="page-section-alt">
+        <div class="container">
+            <div class="row reveal">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="section-eyebrow justify-content-center">más allá del código</div>
+                    <h2 class="section-title">También me destaco en estas habilidades</h2>
+                    <p class="section-desc mt-2 mx-auto">
+                        No todo es código — estas son otras áreas donde también aporto valor.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 mt-3 justify-content-center">
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="facet-card">
+                        <div class="facet-icon">📊</div>
+                        <h4 class="facet-title">Gestión Empresarial</h4>
+                        <p class="facet-desc">
+                            Experiencia real en LimpioVen manejando nóminas
+                            de precios, control de inventario y administración
+                            operativa mediante Excel y Word.
+                        </p>
+                        <div class="facet-tags">
+                            <span class="facet-tag">Excel</span>
+                            <span class="facet-tag">Word</span>
+                            <span class="facet-tag">Inventario</span>
+                            <span class="facet-tag">Nóminas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 reveal">
+                <a href="sobremi.html" class="btn-outline">Ver más sobre mí →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS (teaser Proyectos) -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row reveal">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="section-eyebrow justify-content-center">proyectos destacados</div>
+                    <h2 class="section-title">Algunas cosas que he construido</h2>
+                    <p class="section-desc mt-2 mx-auto">
+                        Dos proyectos que combinan interfaz, estado y consumo de datos reales.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6 reveal">
+                    <div class="project-card">
+                        <p class="project-num">004</p>
+                        <span class="badge-status badge-completado">Completado</span>
+                        <p class="project-year">2022</p>
+                        <h3 class="project-title">Semáforo Interactivo 🚦</h3>
+                        <p class="project-type">React / Componentes</p>
+                        <p class="project-desc">
+                            Simulación de semáforo desarrollada con React. Gestiona el ciclo de estados (rojo, amarillo, verde) mediante componentes funcionales y hooks, demostrando el manejo de estado reactivo en interfaces de usuario.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">useState</span>
+                            <span class="project-tag">Componentes</span>
+                            <span class="project-tag">CSS3</span>
+                        </div>
+                        <a href="https://github.com/garojas22/trafic_light" target="_blank" class="project-link">Ver en GitHub →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="project-card">
+                        <p class="project-num">005</p>
+                        <span class="badge-status badge-completado">Completado</span>
+                        <p class="project-year">2022</p>
+                        <h3 class="project-title">Simple Weather App 🌤️</h3>
+                        <p class="project-type">JavaScript / API REST</p>
+                        <p class="project-desc">
+                            Aplicación web que consume la API de OpenWeatherMap para mostrar el clima en tiempo real de cualquier ciudad del mundo. Implementa fetch, manejo de promesas y renderizado dinámico de datos externos.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Fetch API</span>
+                            <span class="project-tag">OpenWeatherMap</span>
+                            <span class="project-tag">Webpack</span>
+                        </div>
+                        <a href="https://github.com/garojas22/Simple_Weather_App" target="_blank" class="project-link">Ver en GitHub →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 reveal">
+                <a href="proyectos.html" class="btn-navy">Ver todos los proyectos →</a>
             </div>
         </div>
     </section>

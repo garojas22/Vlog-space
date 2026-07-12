@@ -317,9 +317,13 @@
 }
 
 /* Contacto */
-/* #contacto: franja navy oscuro en modo claro; se invierte a navy claro
-   en modo oscuro (ver overrides [data-theme="dark"] en darkmode.css). */
+/* #contacto es siempre una franja oscura: navy en light mode por
+   defecto (ver override justo abajo para light) y gradiente oscuro en
+   dark mode (ver [data-theme="dark"] en darkmode.css, no se toca).
+   El texto/labels/botones de la sección ya usan colores fijos pensados
+   para fondo oscuro, así que no necesitan overrides adicionales. */
 #contacto { background: var(--navy-900); padding: 5rem 0; }
+[data-theme="light"] #contacto { background: #0B0B0F; }
 
 .contact-label {
     font-family: var(--font-terminal);

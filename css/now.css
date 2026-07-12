@@ -1,15 +1,11 @@
 /* =============================================
     now.css — Sección "Ahora" (currently.log)
+    Vive dentro de un .terminal-block (siempre dark, como el resto
+    de las ventanas terminal del sitio) — por eso sus colores son
+    fijos y no usan los tokens --gray-*/--navy-* que cambian de tema.
    ============================================= */
 
-.now-log {
-    background: var(--gray-50);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius);
-    padding: 1.4rem 1.6rem;
-    margin-top: 1.75rem;
-    font-family: var(--mono);
-}
+.now-terminal { max-width: 640px; margin: 1.75rem auto 0; }
 
 .now-line {
     display: flex;
@@ -17,13 +13,13 @@
     align-items: baseline;
     gap: 0.6rem;
     font-size: 0.85rem;
-    color: var(--gray-700);
+    color: #C9D1D9;
     padding: 0.6rem 0;
-    border-bottom: 1px dashed var(--gray-200);
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
 }
 .now-line:last-of-type { border-bottom: none; }
-.now-line a { color: var(--navy-700); text-decoration: none; }
-.now-line a:hover { text-decoration: underline; }
+.now-line a { color: #3B6EA8; text-decoration: none; }
+.now-line a:hover { color: #5B8FCB; text-decoration: underline; }
 
 .now-tag {
     flex-shrink: 0;
@@ -36,14 +32,16 @@
     border-radius: 100px;
     border: 1px solid transparent;
 }
-.now-tag.learning { color: var(--navy-700); background: var(--navy-50); border-color: var(--navy-200); }
-.now-tag.building { color: #065F46; background: #ECFDF5; border-color: #A7F3D0; }
-.now-tag.reading  { color: #92400E; background: #FFFBEB; border-color: #FDE68A; }
-.now-tag.status   { color: var(--gray-700); background: var(--white); border-color: var(--gray-200); }
+/* Misma paleta que ya usa el syntax-highlighting del code-block
+   (.ck/.cs/.cp/.cn en hero.css) para que se sienta la misma familia. */
+.now-tag.learning { color: #FDBA74; background: rgba(253,186,116,0.1); border-color: rgba(253,186,116,0.3); }
+.now-tag.building { color: #86EFAC; background: rgba(134,239,172,0.1); border-color: rgba(134,239,172,0.3); }
+.now-tag.reading  { color: #94A3B8; background: rgba(148,163,184,0.1); border-color: rgba(148,163,184,0.3); }
+.now-tag.status   { color: #818CF8; background: rgba(129,140,248,0.1); border-color: rgba(129,140,248,0.3); }
 
 .now-updated {
     margin-top: 1rem;
     font-size: 0.68rem;
-    color: var(--gray-500);
+    color: #475569;
     text-align: right;
 }
