@@ -28,3 +28,32 @@
         fondo blanco (~5:1 con este tono vs ~1.8:1 con el bright). */
     --term-green: #15803D;
 }
+
+/* Cards de proyectos: los acentos pastel de sections.css (badges, bordes
+   de estado) están pensados para resaltar sobre fondo oscuro — en light
+   mode se lavan contra el blanco. Se oscurece borde/relleno solo para
+   este tema, sin tocar dark (verificado AA: badge-desarrollo ~6.4:1,
+   badge-completado ~6.8:1, bordes en-desarrollo/proximamente ~3.1–5:1
+   incluso con la opacidad reducida de esas cards). */
+[data-theme="light"] .badge-desarrollo {
+    background: #FEF3C7;
+    border-color: #B45309;
+}
+[data-theme="light"] .badge-completado {
+    background: #D1FAE5;
+    border-color: #059669;
+}
+[data-theme="light"] .project-card.en-desarrollo {
+    border-color: #B45309 !important;
+}
+[data-theme="light"] .project-card.en-desarrollo:hover {
+    border-color: #92400E !important;
+    box-shadow: 0 4px 20px rgba(180, 83, 9, 0.22);
+}
+[data-theme="light"] .project-card.proximamente {
+    border-color: #047857 !important;
+}
+[data-theme="light"] .project-card.proximamente:hover {
+    border-color: #065F46 !important;
+    box-shadow: 0 0 0 1px #065F46, 0 8px 20px rgba(5, 150, 105, 0.22);
+}

@@ -131,6 +131,16 @@
     margin-bottom: 0.5rem;
 }
 
+/* Línea de "salida" de un comando de estadísticas (ej. ./stats.sh en el
+   hero de proyectos) — mismo tratamiento mono que el resto de outputs
+   de terminal, reutilizable junto con .hero-output para el borde. */
+.hero-stats {
+    font-family: var(--font-terminal);
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    letter-spacing: -0.01em;
+}
+
 /* Móvil: los prompts no deben desbordar en pantallas angostas (~390px) */
 @media (max-width: 480px) {
     .term-prompt { font-size: 0.78rem; word-break: break-word; }
