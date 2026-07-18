@@ -24,7 +24,7 @@
     --nav-bg: rgba(255,255,255,0.88);
 
     /* Verde de terminal (prompts/estado del hero) — más oscuro que en
-       dark mode porque #4ADE80 puro no da contraste suficiente sobre
-       fondo blanco (~5:1 con este tono vs ~1.8:1 con el bright). */
+        dark mode porque #4ADE80 puro no da contraste suficiente sobre
+        fondo blanco (~5:1 con este tono vs ~1.8:1 con el bright). */
     --term-green: #15803D;
 }

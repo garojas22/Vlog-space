@@ -14,17 +14,17 @@
 .navbar.scrolled { border-bottom-color: var(--navy-200) !important; }
 
 /* El ícono de hamburguesa de Bootstrap usa un SVG oscuro por defecto
-   y quedaba casi invisible sobre el navbar negro — esto ya pasaba en
-   ambos temas antes de este cambio (bug preexistente, no algo que
-   dark mode "tenía bien"), por eso el fix no va scoped a un tema. */
+y quedaba casi invisible sobre el navbar negro — esto ya pasaba en
+ambos temas antes de este cambio (bug preexistente, no algo que
+dark mode "tenía bien"), por eso el fix no va scoped a un tema. */
 .navbar-toggler {
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,255,255,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* .navbar-brand siempre blanco: el navbar es permanentemente oscuro
-   en ambos temas (ver .navbar arriba), así que usa un blanco fijo en
-   vez de var(--white) — ese token se invierte en dark mode y volvía
-   el texto casi invisible sobre el navbar negro. */
+en ambos temas (ver .navbar arriba), así que usa un blanco fijo en
+vez de var(--white) — ese token se invierte en dark mode y volvía
+el texto casi invisible sobre el navbar negro. */
 .navbar-brand {
     font-family: var(--font-display);
     font-size: 0.95rem !important;
@@ -34,7 +34,7 @@
 }
 .navbar-brand .accent { color: var(--navy-700); }
 /* En light mode navy-700 es un azul oscuro pensado para fondos claros
-   y se pierde sobre el navbar negro — en dark mode ya se ve bien
+y se pierde sobre el navbar negro — en dark mode ya se ve bien
    (no se toca). */
 [data-theme="light"] .navbar-brand .accent { color: #8FC1F0; }
 
@@ -50,8 +50,8 @@
 .nav-link:hover  { color: var(--black) !important; background: var(--gray-50) !important; }
 .nav-link.active { color: var(--navy-700) !important; background: var(--navy-50) !important; }
 /* En light mode var(--gray-500) es un gris pensado para fondo claro y
-   queda apagado sobre el navbar negro; reutiliza el mismo tono que ya
-   usa dark mode para ese rol. */
+queda apagado sobre el navbar negro; reutiliza el mismo tono que ya
+usa dark mode para ese rol. */
 [data-theme="light"] .nav-link { color: #8B95A7 !important; }
 [data-theme="light"] .nav-link:hover  { color: #EDF1F7 !important; background: rgba(255,255,255,0.08) !important; }
 [data-theme="light"] .nav-link.active { color: #7FA8D9 !important; background: rgba(91,143,203,0.15) !important; }
@@ -76,7 +76,7 @@
     color: var(--navy-700);
 }
 /* Mismo criterio: el botón de tema estaba pensado para un navbar claro
-   y queda como un círculo blanco sobre el navbar negro en light mode. */
+y queda como un círculo blanco sobre el navbar negro en light mode. */
 [data-theme="light"] #themeToggle {
     background: #131722;
     border-color: #24293A;

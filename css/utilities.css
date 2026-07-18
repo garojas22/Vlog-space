@@ -41,8 +41,8 @@
 /* Responsive */
 @media (max-width: 991px) {
     /* El hero deja de centrarse verticalmente en 100vh (eso generaba
-       el hueco vacío bajo el navbar) y pasa a fluir desde arriba con
-       un padding-top que ya contempla la altura del navbar (~55px)
+        el hueco vacío bajo el navbar) y pasa a fluir desde arriba con
+        un padding-top que ya contempla la altura del navbar (~55px)
        más un respiro razonable. */
     #hero {
         min-height: auto;
