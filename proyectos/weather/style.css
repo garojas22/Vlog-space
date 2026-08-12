@@ -65,8 +65,8 @@ body {
 .container {
   width: 100%;
   max-width: 1200px;
-  margin: 60px;
-  padding: 0 55px;
+  margin: 60px auto 0;
+  padding: 0 15px;
 }
 
 .top-banner {
@@ -77,7 +77,7 @@ body {
   font-weight: bold;
   font-size: 3rem;
   letter-spacing: 0.02em;
-  padding: 0 0 30px 0;
+  padding: 0 0 10px 0;
 }
 
 /* ── BUSCADOR — barra tipo pill integrada ── */
