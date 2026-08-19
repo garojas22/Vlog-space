@@ -1,0 +1,79 @@
+.project-back-link {
+  position: fixed;
+  top: 12px;
+  left: 0;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 42px;
+  min-height: 42px;
+  padding: 8px 11px;
+  overflow: hidden;
+  color: #fff;
+  background: #0B1F3A;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 0 999px 999px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: width 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-back-link__arrow {
+  flex: 0 0 auto;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.project-back-link__label {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.project-back-link:hover,
+.project-back-link:focus-visible {
+  width: 188px;
+  background: #15345c;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.project-back-link:hover .project-back-link__label,
+.project-back-link:focus-visible .project-back-link__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.project-back-link:focus-visible {
+  outline: 3px solid #E35B1E;
+  outline-offset: 3px;
+}
+
+.project-back-link:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 600px) {
+  .project-back-link {
+    top: 10px;
+    width: 40px;
+    min-height: 40px;
+    padding: 8px 10px;
+  }
+
+  .project-back-link:hover,
+  .project-back-link:focus-visible {
+    width: 178px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-back-link,
+  .project-back-link__label {
+    transition: none;
+  }
+}
